@@ -1,6 +1,6 @@
 # 使用官方PHP镜像作为基础镜像
 FROM php:7.4-apache
-
+USER 10014
 # 安装所需的PHP扩展和其他依赖项
 RUN apt-get update && apt-get install -y \
     libfreetype6-dev \
