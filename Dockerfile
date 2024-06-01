@@ -3,17 +3,6 @@ FROM php:7.4-apache
 USER 10014
 # 安装所需的PHP扩展和其他依赖项
 RUN apt-get update && apt-get install -y \
-    libfreetype6-dev \
-    libjpeg62-turbo-dev \
-    libpng-dev \
-    libwebp-dev \
-    libxpm-dev \
-    libonig-dev \
-    libxml2-dev \
-    zip \
-    unzip \
-    && docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp --with-xpm \
-    && docker-php-ext-install -j$(nproc) gd mbstring mysqli pdo pdo_mysql tokenizer xml
 
 # 启用Apache重写模块
 RUN a2enmod rewrite
